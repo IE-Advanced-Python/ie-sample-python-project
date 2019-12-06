@@ -1,3 +1,21 @@
 [build-system]
-requires = ["setuptools >= 40.9.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = [
+    "flit_core >=2.0,<3",
+    "wheel",
+]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+dist-name = "ie-nlp-utils"
+module = "ie_nlp_utils"
+author = "Juan Luis Cano Rodríguez"
+requires = [
+    "pandas",
+    "matplotlib>=2",
+]
+
+[tool.flit.metadata.requires-extra]
+dev = [
+    "black",
+    "pytest",
+]
