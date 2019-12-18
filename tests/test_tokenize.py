@@ -12,11 +12,9 @@ def test_tokenize_returns_expected_list():
     assert tokens == expected_tokens
 
 
-@pytest.mark.parametrize("sentence", [
-    "THIS IS A SENTENCE",
-    "THIS IS A sentence",
-    "THIS is a SENTENCE"
-])
+@pytest.mark.parametrize(
+    "sentence", ["THIS IS A SENTENCE", "THIS IS A sentence", "THIS is a SENTENCE"]
+)
 def test_tokenize_returns_lowercase_tokens(sentence):
     expected_tokens = ["this", "is", "a", "sentence"]
 
@@ -25,14 +23,15 @@ def test_tokenize_returns_lowercase_tokens(sentence):
     assert tokens == expected_tokens
 
 
-
-@pytest.mark.parametrize("sentence, expected_tokens", [
-    ("THIS IS A SENTENCE", ["this", "is", "a", "sentence"]),
-    ("ANOTHER SENTENCE", ["another", "sentence"]),
-])
+@pytest.mark.parametrize(
+    "sentence, expected_tokens",
+    [
+        ("THIS IS A SENTENCE", ["this", "is", "a", "sentence"]),
+        ("ANOTHER SENTENCE", ["another", "sentence"]),
+    ],
+)
 def test_tokenize_returns_lowercase_tokens_different_sentences(
-    sentence,
-    expected_tokens,
+    sentence, expected_tokens
 ):
     tokens = tokenize(sentence, lower=True)
 
