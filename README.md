@@ -2,10 +2,16 @@
 
 Works on Python 3 under any operative system.
 
-To install locally (requires flit >= 2.0):
+To install locally:
 
 ```
-$ flit install
+$ pip install .
+```
+
+or, alternatively (requires flit >= 2.0 and a support for symbolic links):
+
+```
+$ flit install --symlink
 ```
 
 To generate source distribution and wheels:
